@@ -1,0 +1,7 @@
+# Quorum sensing with threshold.
+# Wed Mar 19 13:03:20 2014
+#  1: Update [update]
+#  2: Number of explosions stopped by quorum sensing
+#  3: Average quorum sense threshold upper bound per qs instruction
+
+0 1796 96 

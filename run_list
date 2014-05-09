@@ -1,0 +1,38 @@
+set description qs_noisycomps-sweep
+set email anyaejo@msu.edu
+set freq_email Job
+#set priority 3
+#set class_pref 6,7
+#set max_cpus 50
+set config_dir config
+
+set class_pref 99
+set walltime 100
+set mem_request 3
+set ppn 1
+
+#51..80 noisy_01_reg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .01 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events.cfg -def INST_SET noisy-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
+
+#51..80 noisy_1_reg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .1 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events.cfg -def INST_SET noisy-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
+
+#51..80 noisy_01_compreg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .01 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg -set NO_MUT_INSTS "ABD"
+
+51..80 noisy_001_compreg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .001 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg -set NO_MUT_INSTS "ABD"
+
+51..80 noisy_0001_compreg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .0001 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg -set NO_MUT_INSTS "ABD"
+
+51..80 noisy_0_compreg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD 0.0 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg -set NO_MUT_INSTS "ABD"
+
+#51..80 noisy_01_compnoqs avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .01 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy-noqs.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
+
+#51..80 noisy_1_compreg avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .1 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg -set NO_MUT_INSTS "ABD"
+
+#51..80 noisy_1_compnoqs avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .1 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noisy-noqs.cfg -def INST_SET noisy-comp-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
+
+#51..80 noqs_control avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events-noqstest.cfg -def INST_SET noqs-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
+
+#51..80 evolve_nopy avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events.cfg -def INST_SET state-instset.cfg -set ENVIRONMENT_FILE environment.cfg
+
+#51..80 noisy_01_nopy avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .01 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events.cfg -def INST_SET noisy-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
+
+#51..80 noisy_1_nopy avida -s $seed -set COPY_MUT_PROB .002 -set KABOOM_HAMMING 3 -set NOISY_QS_SD .1 -set WORLD_X 60 -set WORLD_Y 60 -set EVENT_FILE events.cfg -def INST_SET noisy-instset.cfg -set ENVIRONMENT_FILE environment-none.cfg
